@@ -18,16 +18,38 @@ sudoなしでdockerコマンドを使用できるようになります。
 
 ### 1. イメージの作成
 
-
+このリポジトリをクローンして、階層を移動
 ```
 git clone https://github.com/IkuoShige/Nvidia-sdkmanager-docker-gui.git
 cd Nvidia-sdkmanager-docker-gui/
-./download_sdkmanager_docker.sh -v ubuntu2004
-./build_docker_images.sh --ubuntu-version 20.04 --docker-version 1.9.3.10904
+```
+Nvidiaが配布しているsdkmanagerのDockerのファイルをダウンロード
+
+`<distribution>`はダウンロードしたいDockerイメージのubuntuのディストリビューションを指定
+
+デフォルトでは`2004`
+```
+./download_sdkmanager_docker.sh -v ubuntu<distribution>
+```
+例 `./download_sdkmanager_docker.sh -v ubuntu2004`
+
+スクリプトに不備があるため、Nvidiaのリンクから直接ダウンロードしてください。
+https://developer.nvidia.com/sdk-manager
+
+ダウンロードしたファイルからDockerイメージを生成
+```
+sudo docker load -i ~/Downloads/sdkmanager-<version>-Ubuntu_<distribution>_docker.tar.gz
+```
+例 `sudo docker load -i ~/Downloads/sdkmanager-1.9.3.10904-Ubuntu_20.04_docker.tar.gz`
+
+Dockerイメージを元にコンテナをbuild
+```
+./build_docker_images.sh --ubuntu-version <distribution> --docker-version <sdkmanager-version>
 ```
 
+例 `./build_docker_images.sh --ubuntu-version 20.04 --docker-version 1.9.3.10904`
+
 * 備考
-  * -v でダウンロードするsdkmanagerのDockerのubuntuのディストリビューションを設定
   * --ubuntu-version で -v と同様にubuntuのディストリビューションを設定
   * --docker-version でダウンロードしたsdkmanagerのversionを設定
 
@@ -38,14 +60,15 @@ xhost +local:docker
 
 ### 3. コンテナ起動
 ```
-./launch_container.sh --ubuntu-version 20.04 --jetpack-home ./jetpack_home
+./launch_container.sh --ubuntu-version <distribution> --jetpack-home <path/to/jetpack_home>
 ```
+例 `./launch_container.sh --ubuntu-version 20.04 --jetpack-home ./jetpack_home`
 
 * 備考
   * --ubuntu-version でubuntuのディストリビューションを設定可能
-    * デフォルトでは20.04を指定
+    * デフォルトでは`20.04`を指定
   * --jetpack-home でsdkmanagerによって作成されるnvidiaディレクトリの1つ上の階層を設定可能
-    * デフォルトでは、カレントディレクトリを指定
+    * デフォルトでは、`./jetpack`を指定
 
 ## sdkmanager (GUI) の起動
 
