@@ -21,7 +21,7 @@ sudoなしでdockerコマンドを使用できるようになります。
 
 ```
 git clone https://github.com/IkuoShige/Nvidia-sdkmanager-docker-gui.git
-cd raspicat-sim-docker/
+cd Nvidia-sdkmanager-docker-gui/
 ./download_sdkmanager_docker.sh -v ubuntu2004
 ./build_docker_images.sh --ubuntu-version 20.04 --docker-version 1.9.3.10904
 ```
