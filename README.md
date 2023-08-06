@@ -23,17 +23,8 @@ sudoなしでdockerコマンドを使用できるようになります。
 git clone https://github.com/IkuoShige/Nvidia-sdkmanager-docker-gui.git
 cd Nvidia-sdkmanager-docker-gui/
 ```
-Nvidiaが配布しているsdkmanagerのDockerのファイルをダウンロード
 
-`<distribution>`はダウンロードしたいDockerイメージのubuntuのディストリビューションを指定
-
-デフォルトでは`2004`
-```
-./download_sdkmanager_docker.sh -v ubuntu<distribution>
-```
-例 `./download_sdkmanager_docker.sh -v ubuntu2004`
-
-スクリプトに不備があるため、Nvidiaのリンクから直接ダウンロードしてください。
+ダウンロードするにはNvidiaのアカウントにログインする必要があるため、下記のNvidiaのリンクからログインして直接ダウンロードしてください。
 https://developer.nvidia.com/sdk-manager
 
 ダウンロードしたファイルからDockerイメージを生成
