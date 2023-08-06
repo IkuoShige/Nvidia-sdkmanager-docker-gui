@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# usage
+# Usage
 # 使用方法
-#./download_sdkmanager_docker.sh -v ubuntu1804
-#./download_sdkmanager_docker.sh -v ubuntu<distr>
+#./download_sdkmanager_docker.sh -v ubuntu2004
+# ex)./download_sdkmanager_docker.sh -v ubuntu<distr>
 
 # Default Ubuntu version
 # デフォルトのUbuntuバージョン

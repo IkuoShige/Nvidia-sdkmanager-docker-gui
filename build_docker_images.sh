@@ -1,8 +1,9 @@
 #!/bin/bash
 
-# usage
+# Usage
 # 使用方法
 # ./build_docker_images.sh --ubuntu-version 20.04 --docker-version 1.9.3.10904
+# ex)./build_docker_images.sh --ubuntu-version <distribution> --docker-version <sdkmanager-version>
 
 # ヘルプメッセージを表示する関数
 # Function to display help messages

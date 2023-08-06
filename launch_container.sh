@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# Usage
+# 使用方法
+# ./launch_container.sh --ubuntu-version <distribution> --jetpack-home path/to/jetpack_home
+# ex)./launch_container.sh --ubuntu-version 20.04 --jetpack-home ./jetpack_home
+
+
 XSOCK=/tmp/.X11-unix
 XAUTH=/tmp/.docker.xauth
 touch $XAUTH
