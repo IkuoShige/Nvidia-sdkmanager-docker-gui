@@ -67,4 +67,4 @@ RUN sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc
 # Configure QEMU to fix https://forums.developer.nvidia.com/t/nvidia-sdk-manager-on-docker-container/76156/18
 # And, I referred to https://github.com/MiroPsota/sdkmanagerGUI_docker
 COPY enable_qemu_arm.sh /home/${USERNAME}/
-ENTRYPOINT ["/bin/bash", "-c", "/home/nvidia/configure_qemu.sh"]
+ENTRYPOINT ["/bin/bash", "-c", "/home/nvidia/enable_qemu_arm.sh"]
