@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Usage
 # 使用方法
@@ -19,13 +19,13 @@ JETPACK_HOME=$DEFAULT_JETPACK_HOME
 # Default distribution
 # デフォルトのディストリビューション
 DISTR="20.04"
-while [ "$#" -gt 0 ]; do
-    case $1 in
+while [[ $# -gt 0 ]]; do
+    case "$1" in
         --ubuntu-version)
             # If the --ubuntu-version option is given, set the next argument as DISTR
             # --ubuntu-version オプションが指定された場合、次の引数をDISTRに設定
             DISTR="$2"
-            shift
+            shift 2
             ;;
         --jetpack-home)
             # If the --jetpack-home option is given, set the next argument as JETPACK_HOME
