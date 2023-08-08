@@ -66,7 +66,7 @@ docker build \
     --build-arg GID=${USER_GID} \
     --build-arg DISTR=${DISTR} \
     -t sdkmanager_gui_${DISTR} \
-    -f Dockerfile.latest \
+    -f Dockerfile \
     .
 
 
