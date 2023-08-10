@@ -1,5 +1,7 @@
 # Nvidia-sdkmanager-docker-gui
 
+The English version of the README is available [here](https://github.com/IkuoShige/Nvidia-sdkmanager-docker-gui/blob/main/README_EN.md).
+
 DockerでsdkmanagerをGUIで使うためのDockerfileとスクリプトファイルです。
 
 ## dockerの環境構築
