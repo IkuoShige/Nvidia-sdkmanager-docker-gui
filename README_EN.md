@@ -6,7 +6,7 @@ This repository provides a Dockerfile and script files to use sdkmanager with a 
 
 ### Installing and Setting up Docker
 
-```shell
+```bash
 sudo apt install docker.io
 sudo gpasswd -a $USER docker
 sudo reboot
@@ -19,7 +19,7 @@ After rebooting your PC or Docker daemon, you'll be able to use the `docker` com
 ### 1. Creating the Docker Image
 
 Clone this repository and change to the directory:
-```shell
+```bash
 git clone https://github.com/IkuoShige/Nvidia-sdkmanager-docker-gui.git
 cd Nvidia-sdkmanager-docker-gui/
 ```
@@ -30,12 +30,12 @@ https://developer.nvidia.com/sdk-manager
 
 Generate the Docker image from the downloaded file:
 
-```shell
+```bash
 docker load -i ~/Downloads/sdkmanager-<version>-Ubuntu_<distribution>_docker.tar.gz
 ```
 
 Example:
-```shell
+```bash
 docker load -i ~/Downloads/sdkmanager-1.9.3.10904-Ubuntu_20.04_docker.tar.gz
 ```
 
@@ -70,13 +70,13 @@ Example:
 
 ## Running sdkmanager(GUI)
 
-```shell
+```bash
 sdkmanager
 ```
 
 ## Running sdkmanager(CLI)
 
 To install Jetpack 5.1.1 on Jetson Xavier NX:
-```shell
+```bash
 sdkmanager --cli install --logintype devzone --product Jetson --version 5.1.1 --targetos Linux --host --target JETSON_XAVIER_NX_TARGETS --flash all --additionalsdk 'DeepStream 6.2'
 ```
