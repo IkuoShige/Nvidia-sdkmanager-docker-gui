@@ -1,5 +1,7 @@
 # Nvidia-sdkmanager-docker-gui
 
+<img src="./img/sdkmanager_home.png">
+
 The English version of the README is available [here](https://github.com/IkuoShige/Nvidia-sdkmanager-docker-gui/blob/main/README_EN.md).
 
 DockerでsdkmanagerをGUIで使うためのDockerfileとスクリプトファイルです。
@@ -73,6 +75,15 @@ Dockerイメージを元にコンテナをbuild:
 ```bash
 sdkmanager
 ```
+
+初回起動時にはログイン画面が表示されます
+
+`LOGIN`ボタンを押すと、chromeが起動し、nvidiaアカウントのログインベージへ移動します
+
+メールアドレスとパスワードを入力し認証を行ってください
+<img src="./img/sdkmanager_login.png">
+
+認証が完了すると、`TARGET HARDWARE`や`TARGET OPERATING SYSTEM`を選択できるようになります。
 
 ## sdkmanager (CLI) の実行
 
