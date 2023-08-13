@@ -4,6 +4,16 @@
 
 This repository provides a Dockerfile and script files to use sdkmanager with a GUI within Docker.
 
+## Operating Environment
+Below are the operating environment and test results for Nvidia-sdkmanager-docker-gui.
+- hostPC:
+  - Ubuntu 22.04.3 LTS
+- Jetpack Installation
+  - Jetpack 5.1.1
+  - Jetpack 5.0.2
+  - Jetpack 4.6.4
+- Creating the Clone Image
+
 ## Setting up the Docker Environment
 
 ### Installing and Setting up Docker

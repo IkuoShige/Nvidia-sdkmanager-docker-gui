@@ -6,6 +6,16 @@ The English version of the README is available [here](https://github.com/IkuoShi
 
 DockerでsdkmanagerをGUIで使うためのDockerfileとスクリプトファイルです。
 
+## 動作環境
+以下は、Nvidia-sdkmanager-docker-guiの動作環境およびテスト結果です。
+- hostPC:
+  - Ubuntu 22.04.3 LTS
+- Jetpackのインストール
+  - Jetpack 5.1.1
+  - Jetpack 5.0.2
+  - Jetpack 4.6.4
+- クローンイメージの作成
+
 ## dockerの環境構築
 
 ### dockerのインストール・セットアップ
@@ -76,11 +86,11 @@ Dockerイメージを元にコンテナをbuild:
 sdkmanager
 ```
 
-初回起動時にはログイン画面が表示されます
+初回起動時にはログイン画面が表示されます。
 
-`LOGIN`ボタンを押すと、chromeが起動し、nvidiaアカウントのログインベージへ移動します
+`LOGIN`ボタンを押すと、chromeが起動し、nvidiaアカウントのログインベージへ移動します。
 
-メールアドレスとパスワードを入力し認証を行ってください
+メールアドレスとパスワードを入力し認証を行ってください。
 <img src="./img/sdkmanager_login.png">
 
 認証が完了すると、`TARGET HARDWARE`や`TARGET OPERATING SYSTEM`を選択できるようになります。
