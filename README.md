@@ -78,7 +78,7 @@ Dockerイメージを元にコンテナをbuild:
   * --ubuntu-version でubuntuのディストリビューションを設定可能
     * デフォルトでは`20.04`を指定
   * --jetpack-home でsdkmanagerによって作成されるnvidiaディレクトリの1つ上の階層を設定可能
-    * デフォルトでは、`./jetpack`を指定
+    * デフォルトでは、`./jetpack_home`を指定
 
 ## sdkmanager (GUI) の実行
 
