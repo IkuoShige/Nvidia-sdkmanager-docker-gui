@@ -39,6 +39,11 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
+# Make dir for sdkmanager
+# sdkmanagerのためのディレクトリを作成
+mkdir -p ${JETPACK_HOME}/nvidia
+mkdir -p ${JETPACK_HOME}/Downloads
+
 docker run --privileged --rm -it \
            --volume=$XSOCK:$XSOCK:rw \
            --volume=$XAUTH:$XAUTH:rw \
