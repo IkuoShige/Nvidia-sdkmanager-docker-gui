@@ -34,7 +34,7 @@ while [[ $# -gt 0 ]]; do
             show_help
             exit 0
             ;;
-        --ubuntu-distr)
+        --ubuntu-version)
             DISTR="$2"
             shift
             ;;
