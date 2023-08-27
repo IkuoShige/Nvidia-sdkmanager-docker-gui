@@ -1,18 +1,13 @@
-# set defalt base_image
+# ARGUMENTS
 ARG DISTR=20.04
 ARG SDK_MANAGER_DOCKER_VERSION=1.9.3.10904
+
+# set defalt base_image
 FROM sdkmanager:${SDK_MANAGER_DOCKER_VERSION}-Ubuntu_${DISTR}
 #FROM sdkmanager:1.9.3.10904-Ubuntu_18.04
 
-# ARGUMENTS
-ARG SDK_MANAGER_VERSION=1.9.1-10904
-ARG SDK_MANAGER_DEB=sdkmanager_${SDK_MANAGER_VERSION}_amd64.deb
-ARG GID=1000
-ARG UID=1000
-
 # add new sudo user
 ENV USERNAME nvidia
-ENV HOME /home/$USERNAME
 
 # Install required packages
 USER root
@@ -52,12 +47,20 @@ RUN echo "Acquire::GzipIndexes \"false\"; Acquire::CompressionTypes::Order:: \"g
         usbutils \
         liblz4-tool \
         libxml2-utils \
+        libdrm-dev \
+        libgbm-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Google Chrome
-RUN sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' \
-    && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+    x11vnc \
+    xvfb \
+    fluxbox \
+    wmctrl \
+    gnupg2 \
+    && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
         google-chrome-stable \
