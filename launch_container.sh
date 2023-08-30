@@ -43,12 +43,14 @@ done
 # sdkmanagerのためのディレクトリを作成
 mkdir -p ${JETPACK_HOME}/nvidia
 mkdir -p ${JETPACK_HOME}/Downloads
+mkdir -p /home/${USER}/.nvsdkm
 
 docker run --privileged --rm -it \
            --volume=$XSOCK:$XSOCK:rw \
            --volume=$XAUTH:$XAUTH:rw \
            --volume="$JETPACK_HOME/nvidia":/home/nvidia/nvidia:rw \
            --volume="$JETPACK_HOME/Downloads":/home/nvidia/Downloads:rw \
+           --volume="/home/$USER/.nvsdkm":/home/nvidia/.nvsdkm:rw \
            -v /dev/bus/usb:/dev/bus/usb/ \
            --shm-size=1gb \
            --env="XAUTHORITY=${XAUTH}" \
